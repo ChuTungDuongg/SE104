@@ -30,7 +30,7 @@ namespace AirTicketSalesManagementTests.ViewModel.Admin
         {
             _viewModel.IsEditingMaxAirports = true;
             _viewModel.EditMaxAirports = 15;
-            _viewModel.SaveMaxAirportsCommand.Execute(null);
+            _viewModel.SaveMaxAirportsCommand.ExecuteAsync(null).Wait();
 
             Assert.IsFalse(_viewModel.IsEditingMaxAirports, "Editing mode for MaxAirports should be disabled");
             Assert.AreEqual(15, _viewModel.MaxAirports, "The main value should be updated");
@@ -64,7 +64,7 @@ namespace AirTicketSalesManagementTests.ViewModel.Admin
         {
             _viewModel.IsEditingMinFlightTime = true;
             _viewModel.EditMinFlightTime = 45;
-            _viewModel.SaveMinFlightTimeCommand.Execute(null);
+            _viewModel.SaveMinFlightTimeCommand.ExecuteAsync(null).Wait();
 
             Assert.IsFalse(_viewModel.IsEditingMinFlightTime);
             Assert.AreEqual(45, _viewModel.MinFlightTime);

@@ -161,7 +161,7 @@ namespace AirTicketSalesManagement.ViewModel.Admin
             IsEditingMaxAirports = true;
         }
         [RelayCommand]
-        private async void SaveMaxAirportsAsync()
+        private async Task SaveMaxAirportsAsync()
         {
             if (!CanSave()) return;
             if (MaxAirports == EditMaxAirports)
@@ -219,7 +219,7 @@ namespace AirTicketSalesManagement.ViewModel.Admin
             IsEditingMinFlightTime = true;
         }
         [RelayCommand]
-        private async void SaveMinFlightTime()
+        private async Task SaveMinFlightTimeAsync()
         {
             if (!CanSave()) return;
 
@@ -268,7 +268,7 @@ namespace AirTicketSalesManagement.ViewModel.Admin
             IsEditingMaxStopover = true;
         }
         [RelayCommand]
-        private async void SaveMaxStopover()
+        private async Task SaveMaxStopoverAsync()
         {
             if (!CanSave()) return;
 
@@ -317,7 +317,7 @@ namespace AirTicketSalesManagement.ViewModel.Admin
             IsEditingMinStopTime = true;
         }
         [RelayCommand]
-        private async void SaveMinStopTime()
+        private async Task SaveMinStopTimeAsync()
         {
             if (!CanSave()) return;
             if (MinStopTime == EditMinStopTime)
@@ -364,7 +364,7 @@ namespace AirTicketSalesManagement.ViewModel.Admin
             IsEditingMaxStopTime = true;
         }
         [RelayCommand]
-        private async void SaveMaxStopTime()
+        private async Task SaveMaxStopTimeAsync()
         {
             if (!CanSave()) return;
 
@@ -412,7 +412,7 @@ namespace AirTicketSalesManagement.ViewModel.Admin
             IsEditingBookingTime = true;
         }
         [RelayCommand]
-        private async void SaveBookingTime()
+        private async Task SaveBookingTimeAsync()
         {
             if (!CanSave()) return;
 
@@ -460,7 +460,7 @@ namespace AirTicketSalesManagement.ViewModel.Admin
             IsEditingCancelTime = true;
         }
         [RelayCommand]
-        private async void SaveCancelTime()
+        private async Task SaveCancelTimeAsync()
         {
             if (!CanSave()) return;
 
@@ -507,7 +507,7 @@ namespace AirTicketSalesManagement.ViewModel.Admin
             IsEditingTicketClassCount = true;
         }
         [RelayCommand]
-        private async void SaveTicketClassCount()
+        private async Task SaveTicketClassCountAsync()
         {
             if (!CanSave()) return;
 

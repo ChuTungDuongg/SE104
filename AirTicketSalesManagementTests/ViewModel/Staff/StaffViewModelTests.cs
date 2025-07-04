@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AirTicketSalesManagement.ViewModel.Staff;
 using AirTicketSalesManagement.ViewModel.Booking;
-using AirTicketSalesManagement.ViewModel.Customer;
+using AirTicketSalesManagement.ViewModel.CustomerManagement;
 using System.Windows;
 using CommunityToolkit.Mvvm.Messaging;
 using AirTicketSalesManagement.Services;
