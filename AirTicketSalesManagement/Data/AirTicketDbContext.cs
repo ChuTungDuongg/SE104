@@ -54,8 +54,30 @@ public partial class AirTicketDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var connectionString = GetConnectionString();
-        optionsBuilder.UseSqlServer(connectionString);
+        if (optionsBuilder.IsConfigured)
+        {
+            return;
+        }
+
+        string? connectionString = null;
+        try
+        {
+            connectionString = GetConnectionString();
+        }
+        catch (FileNotFoundException)
+        {
+            // Swallow the exception and fall back to an in-memory database
+        }
+
+        if (!string.IsNullOrWhiteSpace(connectionString))
+        {
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+        else
+        {
+            // Default to an in-memory database to allow running without a configuration file
+            optionsBuilder.UseInMemoryDatabase("AirTicketInMemoryDb");
+        }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
